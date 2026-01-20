@@ -45,4 +45,7 @@ Les requêtes HTTP pour les différents services sont disponibles dans les diff�
 ## Ce qui n'a pas été couvert dans l'exercice
 
 - Mise en place de Swagger pour documentation des API.
+- Tests E2E avec un framework comme cucumber.
+- Pas d'exception handler et de réponse d'erreur custom pour les services
+
 
