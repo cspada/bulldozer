@@ -16,10 +16,10 @@
 
 ## Execution des services
 
-`./mvnw spring-boot:run -pl oauth-server` -> serveur Oauth2 sur le port 8090
-`./mvnw spring-boot:run -pl bar-service` -> le service se lance avec le port 8080
-`./mvnw spring-boot:run -pl inventory-service` -> le service se lance avec le port 8081
-`./mvnw spring-boot:run -pl go-back-home-service` -> le service se lance avec le port 8082
+- `./mvnw spring-boot:run -pl oauth-server` -> serveur Oauth2 sur le port 8090
+- `./mvnw spring-boot:run -pl bar-service` -> le service se lance avec le port 8080
+- `./mvnw spring-boot:run -pl inventory-service` -> le service se lance avec le port 8081
+- `./mvnw spring-boot:run -pl go-back-home-service` -> le service se lance avec le port 8082
 
 ## Les différents modules proposés
 
