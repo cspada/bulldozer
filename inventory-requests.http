@@ -1,0 +1,10 @@
+
+### Inventory
+
+GET http://localhost:8081/inventory
+Authorization: Bearer {{employee_token}}
+
+### Refill
+
+POST http://localhost:8081/inventory/refill?count=20
+Authorization: Bearer {{admin_token}}

@@ -1,0 +1,36 @@
+
+server:
+  port: 8080
+
+spring:
+  application:
+    name: bar-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/bar
+    username: bulldozer
+    password: bulldozer
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+  rabbitmq:
+    host: localhost
+    username: bulldozer
+    password: bulldozer
+    virtual-host: bulldozer
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8090
+
+bulldozer:
+  inventory:
+    base-url: http://localhost:8081

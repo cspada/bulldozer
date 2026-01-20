@@ -1,0 +1,33 @@
+### Authentification de l'utilisateur
+# @no-redirect
+POST http://localhost:8090/login
+Content-Type: application/x-www-form-urlencoded
+
+username = admin &
+password = shuuut
+
+### authorize
+# @no-redirect
+GET http://localhost:8090/oauth2/authorize?response_type=code&client_id=igloo-client&scope=profile&
+    redirect_uri=http://127.0.0.1:8080/login/oauth2/code/igloo-client
+
+> {%
+  const location = response.headers.valueOf("Location");
+  const codeParam = "code=";
+  const startIndex = location.indexOf(codeParam);
+  const code = location.substring(startIndex + codeParam.length).split("&")[0];
+  client.global.set("admin_auth_code", code);
+%}
+
+### token
+POST http://localhost:8090/oauth2/token
+Content-Type: application/x-www-form-urlencoded
+Authorization: Basic igloo-client my-client-secret
+
+grant_type = authorization_code &
+code = {{admin_auth_code}} &
+redirect_uri = http://127.0.0.1:8080/login/oauth2/code/igloo-client
+
+> {%
+  client.global.set("admin_token", response.body.access_token);
+%}

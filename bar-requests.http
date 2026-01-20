@@ -1,0 +1,5 @@
+### Order a beer
+
+POST http://localhost:8080/bar/consumption?user_id=John
+Authorization: Bearer {{employee_token}}
+
